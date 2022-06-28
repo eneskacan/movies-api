@@ -17,7 +17,7 @@ public class MovieService {
 
     @Autowired
     public MovieService(ILocalMovieRepository localRepository,
-                        @Qualifier("DummyRemoteRepository") IRemoteMovieRepository remoteRepository) {
+                        @Qualifier("ImdbRemoteRepository") IRemoteMovieRepository remoteRepository) {
         this.localRepository = localRepository;
         this.remoteRepository = remoteRepository;
     }

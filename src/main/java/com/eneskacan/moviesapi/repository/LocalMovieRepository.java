@@ -26,6 +26,7 @@ public class LocalMovieRepository implements ILocalMovieRepository{
 
     @Override
     public boolean saveMovie(Movie movie) {
+        if(movie == null) return false; // Return false if movie is null
         if(getMovie(movie.getImdbId()) != null) return true; // Don't save movies twice
 
         return FileWriterUtil.writeToFile(MovieMapper.movieToCsv(movie), filePath);
