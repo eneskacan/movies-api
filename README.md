@@ -63,7 +63,7 @@ Install and start
 #### Save movie
 
 ```http
-  POST /api/items/${id}
+  POST /api/movies/${id}
 ```
 
 | Parameter | Type     | Description                       |
