@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/movies")
 public class MoviesController {
 
     private final MovieService movieService;
@@ -19,17 +20,17 @@ public class MoviesController {
         this.movieService = movieService;
     }
 
-    @GetMapping("/movies")
+    @GetMapping()
     public ResponseEntity<List<Movie>> listMoviesByName(@RequestParam("name") String name) {
         return new ResponseEntity<>(movieService.listMovies(name), HttpStatus.OK);
     }
 
-    @PostMapping("/movies/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Boolean> saveMovie(@PathVariable(name = "id") String id) {
         return new ResponseEntity<>(movieService.saveMovie(id), HttpStatus.CREATED);
     }
 
-    @GetMapping("/movies/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Movie> getMovieById(@PathVariable(name = "id") String id) {
         return new ResponseEntity<>(movieService.getMovie(id), HttpStatus.OK);
     }
