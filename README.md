@@ -43,7 +43,7 @@ Install and start
 #### Search movies
 
 ```http
-  GET /api/movies?name=${movie_name}
+GET /api/movies?name=${movie_name}
 ```
 
 | Parameter | Type     | Description                |
@@ -53,7 +53,7 @@ Install and start
 #### Get movie
 
 ```http
-  GET /api/movies/${id}
+GET /api/movies/${id}
 ```
 
 | Parameter | Type     | Description                       |
@@ -63,7 +63,7 @@ Install and start
 #### Save movie
 
 ```http
-  POST /api/movies/${id}
+POST /api/movies/${id}
 ```
 
 | Parameter | Type     | Description                       |
